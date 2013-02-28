@@ -1,0 +1,90 @@
+include:
+
+enum GreenThrottleButtons
+{
+	BUTTON_A = 0,
+	BUTTON_B = 1,
+	BUTTON_Y = 2,
+	BUTTON_X = 3,
+	BUTTON_DOWN = 4,
+	BUTTON_UP = 5,
+	BUTTON_LEFT = 6,
+	BUTTON_RIGHT = 7,
+	BUTTON_L1 = 8,
+	BUTTON_L2 = 9,
+	BUTTON_L3 = 10,
+	BUTTON_R1 = 11,
+	BUTTON_R2 = 12,
+	BUTTON_R3 = 13,
+	BUTTON_ANALOG_LEFT_UP = 14,
+	BUTTON_ANALOG_LEFT_DOWN = 15,
+	BUTTON_ANALOG_LEFT_LEFT = 16,
+	BUTTON_ANALOG_LEFT_RIGHT = 17,
+	BUTTON_ANALOG_RIGHT_UP = 18,
+	BUTTON_ANALOG_RIGHT_DOWN = 19,
+	BUTTON_ANALOG_RIGHT_LEFT = 20,
+	BUTTON_ANALOG_RIGHT_RIGHT = 21,
+	BUTTON_BACK = 22,
+	BUTTON_START = 23,
+	BUTTON_GTHOME = 24,
+	BUTTONS_COUNT = 25
+};
+
+enum GreenThrottleControllers
+{
+	CONTROLLER_1 = 0,
+	CONTROLLER_2 = 1,
+	CONTROLLER_3 = 2,
+	CONTROLLER_4 = 3,
+	MAX_CONTROLLERS = 4
+};
+
+enum GreenThrottleButtonStates
+{
+	BUTTON_STATE_HELD = 0,
+	BUTTON_STATE_DOWN = 1,
+	BUTTON_STATE_UP = 2,
+	BUTTON_STATES_COUNT = 3
+};
+
+enum GreenThrottleAnalogControls
+{
+	ANALOG_LEFT = 0,
+	ANALOG_RIGHT = 1,
+	ANALOG_L2 = 2,
+	ANALOG_R2 = 3,
+	ANALOG_CONTROL_COUNT = 4
+};
+
+enum GreenThrottleAnalogAxes
+{
+	ANALOG_AXIS_X = 0,
+	ANALOG_AXIS_Y = 1,
+	ANALOG_AXIS_COUNT = 2
+};
+
+functions:
+
+bool GetButtonState(int buttonState, int controllerId, int button)
+
+float GetAnalogState(int axis, int controllerId, int analogControl)
+
+bool GetAnalogChanged(int controllerId, int analogControl)
+
+bool GetConnectedState(int controllerId)
+
+bool GetServiceConnected()
+
+void ClearControllerState(int controllerId)
+
+void AddLeftButtonRemap()
+
+void RemoveLeftButtonRemap()
+
+void AddRightButtonRemap()
+
+void RemoveRightButtonRemap()
+
+void HideAndroidSystemUI()
+
+void StartFrame()
